@@ -1,0 +1,61 @@
+name: Release, Sign (cosign) and Publish to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write # for OIDC
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Create tarball of package
+        run: |
+          mkdir -p out
+          tar -czf out/gasha-${{ github.ref_name }}.tgz .
+
+      - name: Install cosign
+        run: |
+          COSIGN_VERSION=$(curl -s https://api.github.com/repos/sigstore/cosign/releases/latest | jq -r .tag_name)
+          curl -sSL -o cosign.tar.gz https://github.com/sigstore/cosign/releases/download/${COSIGN_VERSION}/cosign-linux-amd64.tar.gz
+          mkdir -p cosign-bin
+          tar -xzf cosign.tar.gz -C cosign-bin
+          sudo mv cosign-bin/cosign /usr/local/bin/cosign
+          cosign version
+
+      - name: Cosign sign (keyless) and Rekor upload
+        env:
+          COSIGN_EXPERIMENTAL: "1"
+        run: |
+          cosign sign-blob --keyless out/gasha-${{ github.ref_name }}.tgz
+          cosign verify-blob --rekor-url https://rekor.sigstore.dev out/gasha-${{ github.ref_name }}.tgz || true
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish --access public
+
+      - name: Create GitHub Release (attach signed artifact)
+        uses: softprops/action-gh-release@v1
+        with:
+          files: out/gasha-${{ github.ref_name }}.tgz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

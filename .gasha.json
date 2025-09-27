@@ -1,0 +1,5 @@
+{
+  "policy": "warn",
+  "allowScripts": false,
+  "logFile": "./gasha-log.json"
+}

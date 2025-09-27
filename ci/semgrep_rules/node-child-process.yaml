@@ -1,0 +1,6 @@
+rules:
+  - id: node-child-process-exec
+    pattern: "require('child_process')"
+    message: "use of child_process detected"
+    severity: ERROR
+    languages: [javascript]

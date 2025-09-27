@@ -1,0 +1,10 @@
+# Exclude samples, tests, and private keys from published package
+samples/
+samples_unpublished/
+keys/
+*.pem
+*.key
+tests/
+.gitignore
+.gitattributes
+.DS_Store

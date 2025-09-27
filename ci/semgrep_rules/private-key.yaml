@@ -1,0 +1,6 @@
+rules:
+  - id: private-key-inline
+    pattern: "-----BEGIN PRIVATE KEY-----"
+    message: "Private key found inline in repository"
+    severity: ERROR
+    languages: [python, javascript, text]

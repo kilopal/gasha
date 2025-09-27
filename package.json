@@ -1,0 +1,42 @@
+{
+  "name": "gasha",
+  "version": "1.0.0",
+  "description": "Gasha - Defense-first Package Manager with cryptographic signing, sandboxing, and AI-powered auditing",
+  "bin": {
+    "gasha": "bin/gasha.js"
+  },
+  "scripts": {
+    "test": "node bin/gasha.js test-run",
+    "doctor": "node bin/gasha.js doctor",
+    "audit": "node bin/gasha.js audit",
+    "start": "node bin/gasha.js"
+  },
+  "dependencies": {
+    "commander": "^10.0.0",
+    "execa": "^7.1.1",
+    "tar": "^6.1.11"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "package-manager",
+    "security",
+    "cryptography",
+    "signing",
+    "sandboxing",
+    "audit",
+    "transparency",
+    "supply-chain-security"
+  ],
+  "author": "Mockilo Labs <mockilo.dev@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kilopal/gasha.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kilopal/gasha/issues"
+  },
+  "homepage": "https://github.com/kilopal/gasha#readme"
+}

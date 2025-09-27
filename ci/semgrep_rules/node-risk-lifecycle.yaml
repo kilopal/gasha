@@ -1,0 +1,6 @@
+rules:
+  - id: node-postinstall-lifecycle
+    pattern: '"postinstall":'
+    message: "package.json contains postinstall script"
+    severity: WARNING
+    languages: [javascript, json]

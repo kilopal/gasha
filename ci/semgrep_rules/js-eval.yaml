@@ -1,0 +1,8 @@
+rules:
+  - id: js-eval
+    pattern-either:
+      - pattern: "eval(...)"
+      - pattern: "new Function(...)"
+    message: "dynamic code execution detected (eval / Function)"
+    severity: ERROR
+    languages: [javascript]
