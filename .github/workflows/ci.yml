@@ -15,5 +15,7 @@ jobs:
           python-version: '3.10'
       - name: Install Python deps
         run: pip install -r python/requirements.txt
+      - name: Install Node.js deps
+        run: npm install
       - name: Smoke test
         run: node bin/gasha.js test-run
