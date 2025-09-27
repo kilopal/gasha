@@ -1,8 +1,15 @@
 ![Gasha Logo](docs/gasha-logo-placeholder.png)
 
+
 # 🛡️ Gasha — Defense-first Package Manager
 
 **Gasha** is a next-generation secure package manager that protects both **package publishers** and **consumers** from supply chain attacks through cryptographic verification, sandboxed installations, and AI-powered security auditing.
+
+![npm version](https://img.shields.io/npm/v/@kilopal/gasha.svg)
+![License](https://img.shields.io/npm/l/@kilopal/gasha)
+![Downloads](https://img.shields.io/npm/dt/@kilopal/gasha)
+![Node.js Version](https://img.shields.io/node/v/@kilopal/gasha)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kilopal/gasha/CI)
 
 ## 🎯 **Why Gasha?**
 
@@ -46,7 +53,7 @@ When you publish a package with Gasha, it provides:
 ### **Installation**
 
 ```bash
-npm install -g gasha
+npm install -g @kilopal/gasha
 ```
 
 ### **System Check**
@@ -204,7 +211,7 @@ gasha audit express --ai --output json
 ## 📦 **Node.js API**
 
 ```javascript
-const { verify, sign, audit, keygen } = require('gasha');
+const { verify, sign, audit, keygen } = require('@kilopal/gasha');
 
 // Generate keypair
 await keygen('./keys', 'ed25519');
@@ -294,7 +301,7 @@ jobs:
           node-version: '18'
           
       - name: Install Gasha
-        run: npm install -g gasha
+        run: npm install -g @kilopal/gasha
         
       - name: Generate Keys
         run: gasha keygen --out ./keys --algo ed25519

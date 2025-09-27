@@ -1,5 +1,5 @@
 {
-  "name": "gasha",
+  "name": "@kilopal/gasha",
   "version": "1.0.0",
   "description": "Gasha - Defense-first Package Manager with cryptographic signing, sandboxing, and AI-powered auditing",
   "bin": {
