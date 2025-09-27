@@ -5,7 +5,7 @@
 
 **Gasha** is a next-generation secure package manager that protects both **package publishers** and **consumers** from supply chain attacks through cryptographic verification, sandboxed installations, and AI-powered security auditing.
 
-![npm version](https://img.shields.io/npm/v/@kilopal/gasha.svg)
+[![npm version](https://img.shields.io/npm/v/@kilopal/gasha.svg)](https://www.npmjs.com/package/@kilopal/gasha)
 ![License](https://img.shields.io/npm/l/@kilopal/gasha)
 ![Downloads](https://img.shields.io/npm/dt/@kilopal/gasha)
 ![Node.js Version](https://img.shields.io/node/v/@kilopal/gasha)
