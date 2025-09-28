@@ -1,4 +1,4 @@
-![Gasha Logo](docs/gasha-logo-placeholder.png)
+![Gasha Logo](docs/gasha-logo-placeholder.jpg)
 
 
 # 🛡️ Gasha — Defense-first Package Manager
