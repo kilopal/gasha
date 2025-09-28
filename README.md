@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/npm/l/@kilopal/gasha)
 ![Downloads](https://img.shields.io/npm/dt/@kilopal/gasha)
 ![Node.js Version](https://img.shields.io/node/v/@kilopal/gasha)
-![CI](https://img.shields.io/github/actions/workflow/status/kilopal/gasha/ci.yml?branch=main)
+[![CI](https://github.com/kilopal/gasha/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/kilopal/gasha/actions/workflows/ci.yml)
 
 
 
