@@ -9,7 +9,9 @@
 ![License](https://img.shields.io/npm/l/@kilopal/gasha)
 ![Downloads](https://img.shields.io/npm/dt/@kilopal/gasha)
 ![Node.js Version](https://img.shields.io/node/v/@kilopal/gasha)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kilopal/gasha/CI)
+![CI](https://img.shields.io/github/actions/workflow/status/kilopal/gasha/ci.yml?branch=main)
+
+
 
 ## 🎯 **Why Gasha?**
 
